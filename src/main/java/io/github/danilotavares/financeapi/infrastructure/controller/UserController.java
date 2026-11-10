@@ -2,7 +2,7 @@ package io.github.danilotavares.financeapi.infrastructure.controller;
 
 import io.github.danilotavares.financeapi.application.usecase.user.FindAllUsersUseCase;
 import io.github.danilotavares.financeapi.application.usecase.user.FindUserByIdUseCase;
-import io.github.danilotavares.financeapi.application.usecase.user.UserUseCase;
+import io.github.danilotavares.financeapi.application.usecase.user.CreateUserUseCase;
 import io.github.danilotavares.financeapi.domain.entity.User;
 import io.github.danilotavares.financeapi.infrastructure.controller.dto.user.UserRequestDto;
 import io.github.danilotavares.financeapi.infrastructure.controller.dto.user.UserResponseDto;
@@ -12,17 +12,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
-    private final UserUseCase userUseCase;
+    private final CreateUserUseCase userUseCase;
     private final FindUserByIdUseCase findUserByIdUseCase;
     private final FindAllUsersUseCase findAllUsersUseCase;
 
-    public UserController(UserUseCase userUseCase, FindUserByIdUseCase findUserByIdUseCase, FindAllUsersUseCase findAllUsersUseCase) {
+    public UserController(CreateUserUseCase userUseCase, FindUserByIdUseCase findUserByIdUseCase, FindAllUsersUseCase findAllUsersUseCase) {
         this.userUseCase = userUseCase;
         this.findUserByIdUseCase = findUserByIdUseCase;
         this.findAllUsersUseCase = findAllUsersUseCase;
