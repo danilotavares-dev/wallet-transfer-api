@@ -8,6 +8,7 @@ import io.github.danilotavares.financeapi.infrastructure.persistence.repository.
 import io.github.danilotavares.financeapi.infrastructure.persistence.repository.WalletRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,6 +25,13 @@ public class TransactionGatewayImpl implements TransactionGateway {
     @Override
     public Optional<Transaction> findById(UUID id) {
         return transactionRepository.findById(id).map(this::toDomain);
+    }
+
+    @Override
+    public List<Transaction> findAllByWallet(UUID id) {
+        return transactionRepository.findAllByWalletId(id).stream()
+                .map(this::toDomain)
+                .toList();
     }
 
     @Override

@@ -4,6 +4,7 @@ import io.github.danilotavares.financeapi.application.gateway.TransactionGateway
 import io.github.danilotavares.financeapi.application.gateway.UserGateway;
 import io.github.danilotavares.financeapi.application.gateway.WalletGateway;
 import io.github.danilotavares.financeapi.application.usecase.FindWalletByIdUseCase;
+import io.github.danilotavares.financeapi.application.usecase.GetWalletStatementUseCase;
 import io.github.danilotavares.financeapi.application.usecase.TransferUseCase;
 import io.github.danilotavares.financeapi.application.usecase.user.FindAllUsersUseCase;
 import io.github.danilotavares.financeapi.application.usecase.user.FindUserByIdUseCase;
@@ -37,5 +38,10 @@ public class UseCaseConfig {
     @Bean
     public FindWalletByIdUseCase findWalletByIdUseCase(WalletGateway walletGateway) {
         return new FindWalletByIdUseCase(walletGateway);
+    }
+
+    @Bean
+    public GetWalletStatementUseCase getWalletStatementUseCase(TransactionGateway transactionGateway) {
+        return new GetWalletStatementUseCase(transactionGateway);
     }
 }

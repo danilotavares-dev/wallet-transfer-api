@@ -26,7 +26,7 @@ public class CreateUserUseCase {
         Wallet newWallet = new Wallet(
                 UUID.randomUUID(),
                 savedUser,
-                new BigDecimal("1000.00"), // Mil reais de saldo inicial...
+                new BigDecimal("1000.00"),
                 null
         );
         walletGateway.save(newWallet);
