@@ -1,6 +1,6 @@
 package io.github.danilotavares.financeapi.domain.entity;
 
-import io.github.danilotavares.financeapi.exceptions.InsufficientBalanceException;
+import io.github.danilotavares.financeapi.infrastructure.controller.exception.InsufficientBalanceException;
 
 import java.math.BigDecimal;
 import java.util.UUID;
