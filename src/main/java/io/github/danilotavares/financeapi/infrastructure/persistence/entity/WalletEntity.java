@@ -1,7 +1,7 @@
 package io.github.danilotavares.financeapi.infrastructure.persistence.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.github.danilotavares.financeapi.exceptions.InsufficientBalanceException;
+import io.github.danilotavares.financeapi.infrastructure.controller.exception.InsufficientBalanceException;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
